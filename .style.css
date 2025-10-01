@@ -359,11 +359,24 @@ body {
 }
 .about-decor {
   position: absolute;
-  right: 0px;    /* geser dikit keluar area */
-  bottom: 0px;
-  width: 800px;
-  height: auto;    /* biar proporsional */
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Change to relative unit */
+  max-width: 500px; /* Limit maximum size */
+  height: auto;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .about-decor {
+    max-width: 300px; /* Smaller size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-decor {
+    max-width: 200px; /* Even smaller for phones */
+  }
 }
 
 
@@ -739,12 +752,13 @@ body {
   }
 
   .follow-scroll {
-    position: relative;
-    top: 0;
-    max-width: 100%;
-    margin: 0 auto 2rem;
+      position: relative;
+      top: 0;
+      max-width: 90%; /* Slightly less than 100% for better margins */
+      margin: 1rem auto; /* Center it */
+      padding: 1rem;
+    }
   }
-}
 
 @media (max-width: 768px) {
   .navbar-links {
